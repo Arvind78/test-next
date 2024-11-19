@@ -10,6 +10,8 @@ export async function middleware(request: NextRequest) {
         cookieName: "__Secure-next-auth.session-token"
     });
 
+   console.log(token,"middleware")
+
     if (!token) {
         return NextResponse.redirect(new URL('/login', request.url));
     }
